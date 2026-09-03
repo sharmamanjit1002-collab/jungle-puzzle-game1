@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta name="theme-color" content="#063b22">
+
+    <title>Jungle Number Puzzle</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         JUNGLE BACKGROUND
+    ========================== -->
+
+    <div class="jungle-bg">
+
+        <div class="sun"></div>
+
+        <div class="mountain mountain-1"></div>
+        <div class="mountain mountain-2"></div>
+
+        <div class="waterfall">
+            <div class="water"></div>
+        </div>
+
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+
+        <div class="tree tree-left">🌳</div>
+        <div class="tree tree-right">🌴</div>
+
+        <div class="leaf leaf-1">🍃</div>
+        <div class="leaf leaf-2">🌿</div>
+        <div class="leaf leaf-3">🍃</div>
+
+    </div>
+
+
+    <!-- =========================
+         MAIN GAME
+    ========================== -->
+
+    <main class="game-container">
+
+        <!-- HEADER -->
+
+        <header class="game-header">
+
+            <div class="game-title">
+
+                <div class="title-icon">
+                    🔢
+                </div>
+
+                <div>
+                    <h1>Jungle Number</h1>
+                    <p>Puzzle Adventure</p>
+                </div>
+
+            </div>
+
+            <div class="level-badge">
+                🌿 LEVEL
+                <strong id="level">1</strong>
+                <span>/100</span>
+            </div>
+
+        </header>
+
+
+        <!-- GAME CARD -->
+
+        <section class="game-card">
+
+            <!-- TOP INFORMATION -->
+
+            <div class="top-info">
+
+                <div class="info-card">
+
+                    <span class="info-icon">
+                        🏆
+                    </span>
+
+                    <div>
+                        <small>SCORE</small>
+                        <strong id="score">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="info-card lives-card">
+
+                    <span class="info-icon">
+                        ❤️
+                    </span>
+
+                    <div>
+                        <small>LIVES</small>
+
+                        <strong id="lives">
+                            ❤️ ❤️ ❤️
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <span class="info-icon">
+                        🧩
+                    </span>
+
+                    <div>
+                        <small>QUESTION</small>
+
+                        <strong>
+                            <span id="questionNumber">1</span>/10
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TIMER -->
+
+            <div class="timer-section">
+
+                <div class="timer-top">
+
+                    <span>
+                        ⏱️ TIME LEFT
+                    </span>
+
+                    <strong>
+                        <span id="timer">20</span> SEC
+                    </strong>
+
+                </div>
+
+                <div class="timer-background">
+                    <div
+                        id="timerBar"
+                        class="timer-bar">
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- QUESTION -->
+
+            <div class="question-box">
+
+                <div class="question-label">
+                    🧠 NUMBER CHALLENGE
+                </div>
+
+                <h2 id="questionText">
+                    Solve the puzzle
+                </h2>
+
+                <div
+                    id="puzzle"
+                    class="puzzle">
+                    10 + 20 = ?
+                </div>
+
+            </div>
+
+
+            <!-- ANSWERS -->
+
+            <div
+                id="answers"
+                class="answers">
+
+                <!-- JavaScript creates answers -->
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div
+                id="message"
+                class="message">
+            </div>
+
+
+            <!-- GAME BUTTONS -->
+
+            <div class="action-buttons">
+
+                <button
+                    id="submitBtn"
+                    class="game-button submit-button">
+                    🐘 SUBMIT ANSWER
+                </button>
+
+                <button
+                    id="nextBtn"
+                    class="game-button next-button"
+                    disabled>
+                    🐯 NEXT QUESTION
+                </button>
+
+            </div>
+
+
+            <!-- SOUND CONTROLS -->
+
+            <div class="sound-controls">
+
+                <button
+                    id="backgroundSoundBtn"
+                    class="sound-button">
+                    🎵 Jungle Sound ON
+                </button>
+
+                <button
+                    id="gameSoundBtn"
+                    class="sound-button">
+                    🔊 Game Sound ON
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- LEVEL COMPLETE -->
+
+        <section
+            id="levelComplete"
+            class="popup">
+
+            <div class="popup-icon">
+                🏆
+            </div>
+
+            <h2>
+                Level Complete!
+            </h2>
+
+            <p>
+                Excellent! Get ready for the next jungle challenge.
+            </p>
+
+            <div class="popup-score">
+                +100 POINTS
+            </div>
+
+            <button
+                id="continueBtn"
+                class="popup-button">
+                🌿 CONTINUE
+            </button>
+
+        </section>
+
+
+        <!-- GAME OVER -->
+
+        <section
+            id="gameOver"
+            class="popup">
+
+            <div class="popup-icon">
+                😢
+            </div>
+
+            <h2>
+                Jungle Adventure Over
+            </h2>
+
+            <p>
+                You lost all 3 lives.
+            </p>
+
+            <div class="final-score">
+                <small>FINAL SCORE</small>
+                <strong id="finalScore">0</strong>
+            </div>
+
+            <button
+                id="restartBtn"
+                class="popup-button">
+                🔄 PLAY AGAIN
+            </button>
+
+        </section>
+
+
+        <!-- FINAL WIN -->
+
+        <section
+            id="winScreen"
+            class="popup">
+
+            <div class="popup-icon">
+                👑
+            </div>
+
+            <h2>
+                JUNGLE MASTER!
+            </h2>
+
+            <p>
+                You completed all 100 levels and 1,000 puzzles!
+            </p>
+
+            <div class="final-score">
+                <small>FINAL SCORE</small>
+                <strong id="winScore">0</strong>
+            </div>
+
+            <button
+                id="winRestartBtn"
+                class="popup-button">
+                🔄 PLAY AGAIN
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         AUDIO
+    ========================== -->
+
+    <audio
+        id="jungleSound"
+        loop
+        preload="auto">
+
+        <source
+            src="sounds/jungle.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+
+    <audio
+        id="elephantSound"
+        preload="auto">
+
+        <source
+            src="sounds/elephant.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+
+    <audio
+        id="monkeySound"
+        preload="auto">
+
+        <source
+            src="sounds/monkey.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+
+    <audio
+        id="tigerSound"
+        preload="auto">
+
+        <source
+            src="sounds/tiger.mp3"
+            type="audio/mpeg">
+
+    </audio>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
