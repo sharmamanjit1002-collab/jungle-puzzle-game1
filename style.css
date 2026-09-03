@@ -935,6 +935,377 @@ body {
 
     .puzzle {
         font-size: 27px;
+        /* =====================================
+   COMPACT MOBILE GAME
+===================================== */
+
+@media (max-width: 650px) {
+
+    /* Main container */
+    .game-container {
+        width: 96%;
+        margin: 6px auto 20px;
+    }
+
+    /* Header */
+    .game-header {
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+
+    .game-title {
+        gap: 7px;
+    }
+
+    .title-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 23px;
+        border-radius: 12px;
+    }
+
+    .game-title h1 {
+        font-size: 21px;
+    }
+
+    .game-title p {
+        font-size: 10px;
+    }
+
+    .level-badge {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+    .level-badge strong {
+        font-size: 18px;
+    }
+
+
+    /* Game card */
+    .game-card {
+        padding: 10px;
+        border-radius: 17px;
+
+        /* Allows us to move sound controls to top */
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    /* =================================
+       SOUND CONTROLS AT TOP
+    ================================= */
+
+    .sound-controls {
+        order: 1;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        gap: 7px;
+
+        margin: 0 0 10px;
+    }
+
+    .sound-button {
+        width: 100%;
+
+        padding: 9px 5px;
+
+        font-size: 11px;
+
+        border-radius: 20px;
+    }
+
+
+    /* =================================
+       SCORE / LIVES / QUESTION
+    ================================= */
+
+    .top-info {
+        order: 2;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 6px;
+    }
+
+    .info-card {
+        min-height: 50px;
+
+        padding: 7px 5px;
+
+        gap: 5px;
+
+        border-radius: 10px;
+
+        justify-content: center;
+    }
+
+    .info-icon {
+        font-size: 18px;
+    }
+
+    .info-card small {
+        font-size: 8px;
+        margin-bottom: 2px;
+    }
+
+    .info-card strong {
+        font-size: 14px;
+    }
+
+    .lives-card strong {
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+
+    /* =================================
+       TIMER
+    ================================= */
+
+    .timer-section {
+        order: 3;
+
+        margin-top: 9px;
+    }
+
+    .timer-top {
+        margin-bottom: 4px;
+        font-size: 10px;
+    }
+
+    .timer-top strong {
+        font-size: 14px;
+    }
+
+    .timer-background {
+        height: 8px;
+    }
+
+
+    /* =================================
+       QUESTION
+    ================================= */
+
+    .question-box {
+        order: 4;
+
+        margin-top: 10px;
+
+        padding: 13px 8px;
+
+        border-radius: 15px;
+
+        border-width: 2px;
+    }
+
+    .question-label {
+        padding: 5px 9px;
+
+        font-size: 10px;
+
+        margin-bottom: 7px;
+    }
+
+    .question-box h2 {
+        font-size: 14px;
+
+        margin-bottom: 8px;
+    }
+
+    .puzzle {
+        font-size: clamp(25px, 8vw, 36px);
+    }
+
+
+    /* =================================
+       ANSWERS - TWO COLUMNS
+    ================================= */
+
+    .answers {
+        order: 5;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 7px;
+
+        margin-top: 10px;
+    }
+
+    .answer-button {
+        min-height: 50px;
+
+        padding: 7px 8px;
+
+        gap: 7px;
+
+        border-radius: 11px;
+
+        font-size: 17px;
+    }
+
+    .answer-letter {
+        width: 30px;
+        height: 30px;
+
+        font-size: 14px;
+    }
+
+
+    /* =================================
+       MESSAGE
+    ================================= */
+
+    .message {
+        order: 6;
+
+        min-height: 22px;
+
+        margin: 7px 0;
+
+        font-size: 12px;
+    }
+
+
+    /* =================================
+       SUBMIT / NEXT
+    ================================= */
+
+    .action-buttons {
+        order: 7;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 7px;
+    }
+
+    .game-button {
+        min-height: 47px;
+
+        border-radius: 11px;
+
+        font-size: 11px;
+
+        padding: 5px;
+    }
+
+
+    /* =================================
+       JUNGLE BACKGROUND
+    ================================= */
+
+    .tree {
+        font-size: 90px;
+    }
+
+    .waterfall {
+        height: 180px;
+        width: 40px;
+    }
+
+    .sun {
+        width: 65px;
+        height: 65px;
+    }
+}
+
+
+/* =====================================
+   EXTRA SMALL PHONES
+===================================== */
+
+@media (max-width: 380px) {
+
+    .game-container {
+        width: 97%;
+        margin-top: 4px;
+    }
+
+    .game-title h1 {
+        font-size: 18px;
+    }
+
+    .game-title p {
+        font-size: 9px;
+    }
+
+    .title-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+    }
+
+    .level-badge {
+        padding: 6px 7px;
+        font-size: 9px;
+    }
+
+    .level-badge strong {
+        font-size: 16px;
+    }
+
+    .game-card {
+        padding: 8px;
+    }
+
+    .sound-button {
+        font-size: 10px;
+        padding: 8px 3px;
+    }
+
+    .info-card {
+        min-height: 44px;
+        padding: 5px 3px;
+    }
+
+    .info-icon {
+        font-size: 15px;
+    }
+
+    .info-card strong {
+        font-size: 12px;
+    }
+
+    .lives-card strong {
+        font-size: 10px;
+    }
+
+    .question-box {
+        padding: 11px 6px;
+    }
+
+    .question-box h2 {
+        font-size: 13px;
+    }
+
+    .puzzle {
+        font-size: 25px;
+    }
+
+    .answer-button {
+        min-height: 45px;
+        font-size: 15px;
+    }
+
+    .answer-letter {
+        width: 27px;
+        height: 27px;
+        font-size: 12px;
+    }
+
+    .game-button {
+        min-height: 43px;
+        font-size: 10px;
+    }
+}
     }
 
     .answer-button {
